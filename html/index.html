@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Language" content="en">
+    <title>https://github.com/anpham6/squared</title>
+    <script src="/dist/squared.js"></script>
+    <script src="/dist/vdom-lite.framework.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            squared.setFramework(vdom);
+            const result = await squared.parseDocument(document.body);
+            console.log(result.querySelectorAll('ul * a, * * * li'));
+            console.log(document.body.querySelectorAll('ul * a, * * * li'));
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li><a href="https://github.com/anpham6/squared">squared</a></li>
+        <li><a href="https://github.com/anpham6/squared-apache">squared-apache</a></li>
+    </ul>
+</body>
+</html>

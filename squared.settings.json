@@ -1,0 +1,88 @@
+{
+  "version": "1.13.0",
+  "disk_read": false,
+  "disk_write": false,
+  "unc_read": false,
+  "unc_write": false,
+  "cors": {
+    "origin": false
+  },
+  "request_post_limit": "250mb",
+  "gzip_level": "9",
+  "brotli_quality": "11",
+  "jpeg_quality": "100",
+  "tinypng_api_key": "",
+  "env": "development",
+  "port": {
+    "production": "80",
+    "development": "3000"
+  },
+  "routing": {
+    "shared": [
+      { "mount": "html", "path": "/" },
+      { "mount": "dist", "path": "/dist" }
+    ],
+    "production": [],
+    "development": [
+      { "mount": "build", "path": "/build" },
+      { "mount": "html/common", "path": "/common" },
+      { "mount": "html/books", "path": "/books" },
+      { "mount": "html/demos", "path": "/demos" },
+      { "mount": "html/demos-dev", "path": "/demos-dev" }
+    ]
+  },
+  "external": {
+    "html": {
+      "prettier": {
+        "beautify": {
+          "parser": "html",
+          "printWidth": 120,
+          "tabWidth": 4
+        }
+      },
+      "html-minifier-terser": {
+        "minify": {
+          "collapseWhitespace": true,
+          "collapseBooleanAttributes": true,
+          "removeEmptyAttributes": true,
+          "removeRedundantAttributes": true,
+          "removeScriptTypeAttributes": true,
+          "removeStyleLinkTypeAttributes": true,
+          "removeComments": true
+        }
+      },
+      "js_beautify": {}
+    },
+    "css": {
+      "prettier": {
+        "beautify": {
+          "parser": "css",
+          "tabWidth": 4
+        }
+      },
+      "clean_css": {
+        "minify": {
+          "inline": ["none"],
+          "level": 1
+        }
+      },
+      "js_beautify": {}
+    },
+    "js": {
+      "prettier": {
+        "beautify": {
+          "parser": "babel",
+          "printWidth": 100,
+          "tabWidth": 4
+        }
+      },
+      "terser": {
+        "minify": {
+          "toplevel": true,
+          "keep_classnames": true
+        }
+      },
+      "js_beautify": {}
+    }
+  }
+}
