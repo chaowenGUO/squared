@@ -4,16 +4,31 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Language" content="en">
     <title>https://github.com/anpham6/squared</title>
-    <script src="/dist/squared.js"></script>
-    <script src="/dist/vdom-lite.framework.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', async function() {
-            squared.setFramework(vdom);
-            const result = await squared.parseDocument(document.body);
-            console.log(result.querySelectorAll('ul * a, * * * li'));
-            console.log(document.body.querySelectorAll('ul * a, * * * li'));
-        });
-    </script>
+    <script src="/dist/squared.min.js"></script>
+<script src="/dist/squared.base.min.js"></script>
+<script src="/dist/squared.svg.min.js"></script> /* optional */
+<script src="/dist/android.framework.min.js"></script>
+<script>
+    // optional
+    squared.settings.targetAPI = 29;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        squared.setFramework(android, /* optional { builtInExtensions: [] } */);
+
+        squared.parseDocument(); // default: document.body 'BODY'
+        // OR
+        squared.parseDocument(/* HTMLElement */, /* 'subview-id' */, /* ...etc */);
+
+        // With: node-express / squared-apache
+        squared.saveToArchive(/* optional: archive name */, /* options */);
+        // OR
+        squared.copyToDisk(/* required: local directory */, /* options */);
+        // OR
+        squared.appendToArchive(/* required: location uri */, /* options */);
+
+        squared.reset(); // start new "parseDocument" session
+    });
+</script>
 </head>
 <body>
     <ul>
