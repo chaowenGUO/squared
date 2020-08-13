@@ -18,13 +18,19 @@
         squared.parseDocument(); // default: document.body 'BODY'
 
         // With: node-express / squared-apache
-        squared.saveToArchive();
-        // OR
-        //squared.copyToDisk()
-        // OR
-        //squared.appendToArchive(/* required: location uri */, /* options */);
-
-        squared.reset(); // start new "parseDocument" session
+        squared.system.writeLayoutAllXml() // write string[] generated xml
+        squared.system.writeResourceAllXml()
+        squared.system.writeResourceAnimXml()
+        squared.system.writeResourceArrayXml()
+        squared.system.writeResourceColorXml()  
+        squared.system.writeResourceDimenXml()
+        squared.system.writeResourceDrawableXml()
+        squared.system.writeResourceFontXml()
+        squared.system.writeResourceStringXml()
+        squared.system.writeResourceStyleXml()
+        squared.system.writeResourceDrawableImage()
+        squared.system.writeResourceRawVideo()
+        squared.system.writeResourceRawAudio()
     });
 </script>
 </head>
