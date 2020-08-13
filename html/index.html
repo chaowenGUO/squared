@@ -14,23 +14,20 @@
 
     document.addEventListener('DOMContentLoaded', function() {
         squared.setFramework(android)
-
-        squared.parseDocument(); // default: document.body 'BODY'
-
-        // With: node-express / squared-apache
-        squared.system.writeLayoutAllXml() // write string[] generated xml
-        squared.system.writeResourceAllXml()
-        squared.system.writeResourceAnimXml()
-        squared.system.writeResourceArrayXml()
-        squared.system.writeResourceColorXml()  
-        squared.system.writeResourceDimenXml()
-        squared.system.writeResourceDrawableXml()
-        squared.system.writeResourceFontXml()
-        squared.system.writeResourceStringXml()
-        squared.system.writeResourceStyleXml()
-        squared.system.writeResourceDrawableImage()
-        squared.system.writeResourceRawVideo()
-        squared.system.writeResourceRawAudio()
+        squared.parseDocument()
+        console.log(squared.system.writeLayoutAllXml())
+        console.log(squared.system.writeResourceAllXml())
+        console.log(squared.system.writeResourceAnimXml())
+        console.log(squared.system.writeResourceArrayXml())
+        console.log(squared.system.writeResourceColorXml()) 
+        console.log(squared.system.writeResourceDimenXml())
+        console.log(squared.system.writeResourceDrawableXml())
+        console.log(squared.system.writeResourceFontXml())
+        console.log(squared.system.writeResourceStringXml())
+        console.log(squared.system.writeResourceStyleXml())
+        console.log(squared.system.writeResourceDrawableImage())
+        console.log(squared.system.writeResourceRawVideo())
+        console.log(squared.system.writeResourceRawAudio())
     });
 </script>
 </head>
