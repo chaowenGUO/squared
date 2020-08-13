@@ -18,11 +18,11 @@
         squared.parseDocument(); // default: document.body 'BODY'
 
         // With: node-express / squared-apache
-        squared.saveToArchive(/* optional: archive name */, /* options */);
+        squared.saveToArchive();
         // OR
-        squared.copyToDisk(/* required: local directory */, /* options */);
+        //squared.copyToDisk(/* required: local directory */, /* options */);
         // OR
-        squared.appendToArchive(/* required: location uri */, /* options */);
+        //squared.appendToArchive(/* required: location uri */, /* options */);
 
         squared.reset(); // start new "parseDocument" session
     });
